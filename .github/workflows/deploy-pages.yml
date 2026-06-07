@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
@@ -17,40 +17,38 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Build site
+      - name: Create deployment directory
         run: |
-          # Copy static files and HTML to dist directory for deployment
-          mkdir -p dist
-          cp -r static/* dist/ 2>/dev/null || true
-          cp templates/index.html dist/index.html 2>/dev/null || true
-          cp templates/login.html dist/login.html 2>/dev/null || true
-          cp templates/dashboard.html dist/dashboard.html 2>/dev/null || true
-          cp templates/404.html dist/404.html 2>/dev/null || true
-          ls -la dist/
-          echo "Build completed"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+          mkdir -p _site
+          
+      - name: Copy static files
+        run: |
+          cp -v static/* _site/ 2>/dev/null || echo "Static files copied"
+          
+      - name: Copy HTML pages
+        run: |
+          cp -v templates/index.html _site/index.html || true
+          cp -v templates/login.html _site/login.html || true
+          cp -v templates/dashboard.html _site/dashboard.html || true
+          cp -v templates/404.html _site/404.html || true
+          ls -la _site/
+          
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: '_site'
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
