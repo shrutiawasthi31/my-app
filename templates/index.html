@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">MyApp</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                {% if user %}
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout" class="logout-btn">Logout ({{ user }})</a></li>
+                {% else %}
+                    <li><a href="/login" class="login-btn">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to MyApp</h2>
+                <p>Build, manage, and collaborate on projects efficiently</p>
+                {% if user %}
+                    <p class="welcome-msg">Welcome back, <strong>{{ user }}</strong>!</p>
+                    <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                {% else %}
+                    <a href="/login" class="btn btn-primary">Get Started</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="features">
+            <h3>Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📊 Analytics</h4>
+                    <p>Real-time project analytics and insights</p>
+                </div>
+                <div class="feature-card">
+                    <h4>👥 Collaboration</h4>
+                    <p>Work together with your team seamlessly</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔒 Secure</h4>
+                    <p>Enterprise-grade security for your data</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⚡ Fast</h4>
+                    <p>Lightning-fast performance and reliability</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MyApp. All rights reserved.</p>
+    </footer>
+</body>
+</html>

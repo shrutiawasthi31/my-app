@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">MyApp</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout" class="logout-btn">Logout ({{ data.user }})</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <p>Welcome back, <strong>{{ data.user }}</strong>!</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📁</div>
+                    <div class="stat-content">
+                        <h3>{{ data.stats.projects }}</h3>
+                        <p>Active Projects</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3>{{ data.stats.tasks_completed }}</h3>
+                        <p>Tasks Completed</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3>{{ data.stats.team_members }}</h3>
+                        <p>Team Members</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <section class="content-section">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-time">2 hours ago</span>
+                            <p>Project "Website Redesign" updated</p>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">5 hours ago</span>
+                            <p>New team member joined</p>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">1 day ago</span>
+                            <p>Task "API Integration" completed</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary">+ New Project</button>
+                        <button class="btn btn-secondary">+ Add Task</button>
+                        <button class="btn btn-secondary">📤 Export Report</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MyApp. All rights reserved.</p>
+    </footer>
+</body>
+</html>
