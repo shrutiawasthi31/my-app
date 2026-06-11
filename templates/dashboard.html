@@ -3,87 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - My App</title>
+    <title>Dashboard | Northstar Flow</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">MyApp</h1>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/logout" class="logout-btn">Logout ({{ data.user }})</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section class="dashboard-container">
-            <div class="dashboard-header">
-                <h2>Dashboard</h2>
-                <p>Welcome back, <strong>{{ data.user }}</strong>!</p>
+    <div class="site-shell">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="brand-lockup" href="/">
+                    <span class="brand-badge">N</span>
+                    <h1 class="logo">Northstar Flow <span>Team workspace</span></h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout" class="logout-btn">Logout ({{ data.user }})</a></li>
+                </ul>
             </div>
+        </nav>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">📁</div>
-                    <div class="stat-content">
-                        <h3>{{ data.stats.projects }}</h3>
-                        <p>Active Projects</p>
+        <main>
+            <section class="dashboard-container">
+                <div class="dashboard-header">
+                    <div>
+                        <p class="eyebrow">Operations snapshot</p>
+                        <h2>Welcome back, {{ data.user }}.</h2>
+                        <p>Your team workspace is active, aligned, and ready for the next decision.</p>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button class="btn btn-tertiary">New project</button>
+                        <button class="btn btn-tertiary">Export summary</button>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-content">
-                        <h3>{{ data.stats.tasks_completed }}</h3>
-                        <p>Tasks Completed</p>
+                <div class="stats-grid">
+                    <div class="stat-card accent">
+                        <span class="stat-label">Active projects</span>
+                        <strong class="stat-value">{{ data.stats.projects }}</strong>
+                        <p>Programs currently moving through delivery.</p>
+                    </div>
+
+                    <div class="stat-card teal">
+                        <span class="stat-label">Tasks completed</span>
+                        <strong class="stat-value">{{ data.stats.tasks_completed }}</strong>
+                        <p>Important execution milestones already closed.</p>
+                    </div>
+
+                    <div class="stat-card gold">
+                        <span class="stat-label">Team members</span>
+                        <strong class="stat-value">{{ data.stats.team_members }}</strong>
+                        <p>Specialists collaborating inside the workspace.</p>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-content">
-                        <h3>{{ data.stats.team_members }}</h3>
-                        <p>Team Members</p>
-                    </div>
+                <div class="dashboard-content">
+                    <section class="content-section">
+                        <h3>Recent activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">2 hours ago</span>
+                                <p>Website redesign moved into stakeholder review with updated design files attached.</p>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">5 hours ago</span>
+                                <p>New delivery specialist joined the operations lane and received workspace access.</p>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">1 day ago</span>
+                                <p>API integration milestone was completed and marked ready for QA verification.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h3>Quick actions</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-tertiary">+ Launch project</button>
+                            <button class="btn btn-tertiary">+ Assign task</button>
+                            <button class="btn btn-tertiary">+ Share status report</button>
+                        </div>
+                    </section>
                 </div>
-            </div>
+            </section>
+        </main>
 
-            <div class="dashboard-content">
-                <section class="content-section">
-                    <h3>Recent Activity</h3>
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <span class="activity-time">2 hours ago</span>
-                            <p>Project "Website Redesign" updated</p>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-time">5 hours ago</span>
-                            <p>New team member joined</p>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-time">1 day ago</span>
-                            <p>Task "API Integration" completed</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Quick Actions</h3>
-                    <div class="action-buttons">
-                        <button class="btn btn-secondary">+ New Project</button>
-                        <button class="btn btn-secondary">+ Add Task</button>
-                        <button class="btn btn-secondary">📤 Export Report</button>
-                    </div>
-                </section>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 MyApp. All rights reserved.</p>
-    </footer>
+        <footer class="footer">
+            <p>&copy; 2026 Northstar Flow. Crafted for modern teams.</p>
+        </footer>
+    </div>
 </body>
 </html>

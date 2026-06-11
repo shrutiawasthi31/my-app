@@ -1,21 +1,22 @@
-# MyApp - Full-Stack Flask Application
+# Northstar Flow - Flask Workspace Application
 
-A modern, full-stack Flask application with authentication and dashboard. This project demonstrates best practices for CI/CD deployment using GitHub Actions.
+A polished Flask workspace app with a redesigned landing page, login experience, protected dashboard, and custom 404 page. It demonstrates a lightweight authenticated product flow with modern presentation styling.
 
 ## 🚀 Features
 
-- **Multi-page Application** with Home, Login, and Dashboard pages
+- **Multi-page Product Experience** with Home, Login, Dashboard, and 404 pages
 - **User Authentication** with session management
-- **Responsive Design** for mobile and desktop
+- **Responsive Design** tuned for mobile and desktop
 - **GitHub Actions CI/CD** for automated testing and deployment
 - **Dashboard** with project statistics and activity tracking
+- **Premium UI Refresh** with a stronger visual system and clearer content hierarchy
 
 ## 📋 Pages
 
-1. **Home Page** (`/`) - Welcome page with feature overview
-2. **Login Page** (`/login`) - User authentication
-3. **Dashboard** (`/dashboard`) - Protected dashboard with statistics (requires login)
-4. **404 Page** - Custom error page
+1. **Home Page** (`/`) - Product-style landing page
+2. **Login Page** (`/login`) - Session-based sign in
+3. **Dashboard** (`/dashboard`) - Protected team workspace
+4. **404 Page** - Branded fallback page
 
 ## 🛠️ Tech Stack
 

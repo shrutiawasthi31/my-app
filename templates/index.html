@@ -3,64 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My App</title>
+    <title>Northstar Flow | Team Workspace</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">MyApp</h1>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                {% if user %}
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/logout" class="logout-btn">Logout ({{ user }})</a></li>
-                {% else %}
-                    <li><a href="/login" class="login-btn">Login</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Welcome to MyApp</h2>
-                <p>Build, manage, and collaborate on projects efficiently</p>
-                {% if user %}
-                    <p class="welcome-msg">Welcome back, <strong>{{ user }}</strong>!</p>
-                    <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
-                {% else %}
-                    <a href="/login" class="btn btn-primary">Get Started</a>
-                {% endif %}
+    <div class="site-shell">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="brand-lockup" href="/">
+                    <span class="brand-badge">N</span>
+                    <h1 class="logo">Northstar Flow <span>Team workspace</span></h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    {% if user %}
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/logout" class="logout-btn">Logout ({{ user }})</a></li>
+                    {% else %}
+                        <li><a href="/login" class="login-btn">Login</a></li>
+                    {% endif %}
+                </ul>
             </div>
-        </section>
+        </nav>
 
-        <section class="features">
-            <h3>Features</h3>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>📊 Analytics</h4>
-                    <p>Real-time project analytics and insights</p>
-                </div>
-                <div class="feature-card">
-                    <h4>👥 Collaboration</h4>
-                    <p>Work together with your team seamlessly</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🔒 Secure</h4>
-                    <p>Enterprise-grade security for your data</p>
-                </div>
-                <div class="feature-card">
-                    <h4>⚡ Fast</h4>
-                    <p>Lightning-fast performance and reliability</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <main>
+            <section class="hero-grid">
+                <article class="hero-panel">
+                    <p class="eyebrow">Workspace orchestration</p>
+                    <h2 class="hero-title">Run client work with more clarity and less chaos.</h2>
+                    <p class="hero-copy">
+                        Northstar Flow gives teams one calm place to manage delivery, keep clients aligned,
+                        and move from kickoff to approval without the usual noise.
+                    </p>
+                    <div class="hero-actions">
+                        {% if user %}
+                            <a href="/dashboard" class="btn btn-primary">Open your dashboard</a>
+                            <a href="#features" class="btn btn-secondary">Explore capabilities</a>
+                        {% else %}
+                            <a href="/login" class="btn btn-primary">Enter workspace</a>
+                            <a href="#features" class="btn btn-secondary">See what changes</a>
+                        {% endif %}
+                    </div>
 
-    <footer>
-        <p>&copy; 2026 MyApp. All rights reserved.</p>
-    </footer>
+                    <ul class="stat-strip">
+                        <li>
+                            <strong>12</strong>
+                            <span>active delivery lanes in motion</span>
+                        </li>
+                        <li>
+                            <strong>45</strong>
+                            <span>completed tasks synced across the team</span>
+                        </li>
+                        <li>
+                            <strong>8</strong>
+                            <span>specialists collaborating in one flow</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <aside class="signal-panel">
+                    <p class="eyebrow">This week’s pulse</p>
+                    <h3>The workspace your clients actually enjoy using.</h3>
+                    <p class="signal-copy">
+                        Replace scattered updates and status-chasing with one shared operating layer for work,
+                        decisions, and momentum.
+                    </p>
+                    <div class="metric-stack">
+                        <div class="metric-card">
+                            <span class="metric-value">98%</span>
+                            <span class="metric-label">delivery visibility across projects</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">secure access for clients and internal teams</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">3x</span>
+                            <span class="metric-label">faster review and approval cycles</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="section-block" id="features">
+                <div class="section-intro">
+                    <div>
+                        <p class="eyebrow">Core capabilities</p>
+                        <h3 class="section-title">Made for focused execution, not dashboard theater.</h3>
+                    </div>
+                    <p>
+                        Every screen is designed to reduce friction: fewer check-ins, clearer ownership,
+                        and faster movement from planning to done.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">01</span>
+                        <h4>Live operating view</h4>
+                        <p>Track progress, blockers, and next decisions without digging through threads.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">02</span>
+                        <h4>Client-ready updates</h4>
+                        <p>Share polished status snapshots that feel clear, intentional, and trustworthy.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">03</span>
+                        <h4>Protected access</h4>
+                        <p>Give each role the right level of visibility with a secure authenticated flow.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">04</span>
+                        <h4>Faster decisions</h4>
+                        <p>Keep approvals moving with better context, cleaner review loops, and fewer delays.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Northstar Flow. Crafted for modern teams.</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -3,54 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - My App</title>
+    <title>Sign In | Northstar Flow</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">MyApp</h1>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section class="login-container">
-            <div class="login-box">
-                <h2>Login</h2>
-                
-                {% if error %}
-                    <div class="error-message">{{ error }}</div>
-                {% endif %}
-                
-                <form method="POST" action="/login" class="login-form">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
-                </form>
-                
-                <div class="login-demo">
-                    <p><strong>Demo Credentials:</strong></p>
-                    <p>Username: <code>admin</code> Password: <code>password123</code></p>
-                    <p>or</p>
-                    <p>Username: <code>user</code> Password: <code>user123</code></p>
-                </div>
+    <div class="site-shell">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="brand-lockup" href="/">
+                    <span class="brand-badge">N</span>
+                    <h1 class="logo">Northstar Flow <span>Team workspace</span></h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </nav>
 
-    <footer>
-        <p>&copy; 2026 MyApp. All rights reserved.</p>
-    </footer>
+        <main>
+            <section class="login-layout">
+                <article class="login-panel">
+                    <p class="eyebrow">Secure access</p>
+                    <h1>Step into the workspace that keeps delivery moving.</h1>
+                    <p>
+                        Sign in to view your projects, monitor progress, and keep every client-facing moment
+                        calm, current, and organized.
+                    </p>
+
+                    <ul class="login-highlights">
+                        <li>Live dashboards for delivery health and momentum</li>
+                        <li>Protected access for internal teams and clients</li>
+                        <li>Clean status snapshots with fewer handoff gaps</li>
+                    </ul>
+                </article>
+
+                <div class="login-box">
+                    <p class="eyebrow">Welcome back</p>
+                    <h2>Sign in</h2>
+                    <p class="login-subtitle">Use one of the demo accounts below to preview the product experience.</p>
+
+                    {% if error %}
+                        <div class="error-message">{{ error }}</div>
+                    {% endif %}
+
+                    <form method="POST" action="/login" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <div class="helper-row">
+                            <span>Session-based demo login</span>
+                            <span>Protected dashboard access</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Enter workspace</button>
+                    </form>
+
+                    <div class="login-demo">
+                        <p><strong>Demo Credentials</strong></p>
+                        <p>Admin: <code>admin</code> / <code>password123</code></p>
+                        <p>User: <code>user</code> / <code>user123</code></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Northstar Flow. Crafted for modern teams.</p>
+        </footer>
+    </div>
 </body>
 </html>

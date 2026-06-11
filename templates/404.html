@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - My App</title>
+    <title>Page Not Found | Northstar Flow</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">MyApp</h1>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <section class="error-container">
-            <div class="error-box">
-                <h1>404</h1>
-                <h2>Page Not Found</h2>
-                <p>Sorry, the page you're looking for doesn't exist.</p>
-                <a href="/" class="btn btn-primary">Go Home</a>
+    <div class="site-shell">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="brand-lockup" href="/">
+                    <span class="brand-badge">N</span>
+                    <h1 class="logo">Northstar Flow <span>Team workspace</span></h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </nav>
 
-    <footer>
-        <p>&copy; 2026 MyApp. All rights reserved.</p>
-    </footer>
+        <main>
+            <section class="error-layout">
+                <div class="error-box">
+                    <p class="eyebrow">Lost your route?</p>
+                    <h1>404</h1>
+                    <h2>This page drifted out of the workspace.</h2>
+                    <p>The link may be outdated, moved, or never existed. Let’s get you back to the main flow.</p>
+                    <a href="/" class="btn btn-primary">Return home</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Northstar Flow. Crafted for modern teams.</p>
+        </footer>
+    </div>
 </body>
 </html>
