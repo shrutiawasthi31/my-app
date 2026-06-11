@@ -1,0 +1,14 @@
+# Python cache and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local environment files
+.env
+.env.*
+
+# OS/editor noise
+.DS_Store
+.vscode/
