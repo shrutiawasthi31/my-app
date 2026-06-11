@@ -3,337 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Secure Portal</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-            padding: 40px;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .logo h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .logo p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #667eea;
-            background-color: #f8f9ff;
-        }
-
-        .remember-forgot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .remember-forgot input[type="checkbox"] {
-            cursor: pointer;
-        }
-
-        .remember-forgot label {
-            margin: 0;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .remember-forgot a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .remember-forgot a:hover {
-            text-decoration: underline;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .login-btn:active {
-            transform: translateY(0);
-        }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            margin: 25px 0;
-            color: #999;
-            font-size: 14px;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e0e0e0;
-        }
-
-        .divider span {
-            padding: 0 10px;
-        }
-
-        .social-login {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .social-btn {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            background: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .social-btn:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
-        }
-
-        .signup-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .signup-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-
-        .error-message {
-            display: none;
-            background: #fee;
-            color: #c33;
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            border: 1px solid #fcc;
-        }
-
-        .error-message.show {
-            display: block;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .logo h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
+    <title>Northstar Flow | Client Workspace</title>
+    <meta
+        name="description"
+        content="Northstar Flow is a polished team workspace for client delivery, approvals, and project visibility."
+    >
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <h1>🔐 Login</h1>
-            <p>Welcome back</p>
-        </div>
+    <div class="site-shell">
+        <header class="topbar">
+            <a class="brand-lockup" href="index.html" aria-label="Northstar Flow home">
+                <span class="brand-mark">N</span>
+                <span class="brand-copy">
+                    <strong>Northstar Flow</strong>
+                    <span>Client Workspace</span>
+                </span>
+            </a>
 
-        <div class="error-message" id="errorMessage"></div>
+            <nav class="topnav" aria-label="Primary">
+                <a href="#features">Features</a>
+                <a href="#preview">Preview</a>
+                <a href="login.html" class="nav-pill">Sign in</a>
+            </nav>
+        </header>
 
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    placeholder="your@email.com" 
-                    required
-                >
-            </div>
+        <main>
+            <section class="hero-grid">
+                <article class="hero-panel">
+                    <p class="eyebrow">Modern delivery system</p>
+                    <h1>Give clients a workspace that feels calm, premium, and clear.</h1>
+                    <p class="hero-copy">
+                        Northstar Flow helps teams manage updates, approvals, and momentum in one elegant place,
+                        so every project feels organized from kickoff to sign-off.
+                    </p>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
-                    placeholder="Enter your password" 
-                    required
-                >
-            </div>
+                    <div class="hero-actions">
+                        <a href="login.html" class="btn btn-primary">Open workspace</a>
+                        <a href="#features" class="btn btn-secondary">Explore features</a>
+                    </div>
 
-            <div class="remember-forgot">
-                <label>
-                    <input type="checkbox" name="remember"> Remember me
-                </label>
-                <a href="#">Forgot password?</a>
-            </div>
+                    <ul class="stat-strip" aria-label="Workspace highlights">
+                        <li>
+                            <strong>98%</strong>
+                            <span>project visibility across stakeholders</span>
+                        </li>
+                        <li>
+                            <strong>24/7</strong>
+                            <span>access to files, notes, and approvals</span>
+                        </li>
+                        <li>
+                            <strong>3x</strong>
+                            <span>faster review cycles with cleaner context</span>
+                        </li>
+                    </ul>
+                </article>
 
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+                <aside class="preview-panel" id="preview">
+                    <p class="eyebrow">Live preview</p>
+                    <h2>A dashboard that looks like a product, not a placeholder.</h2>
+                    <p>
+                        Built for teams who want polished client-facing software with a sharper information
+                        hierarchy and a more intentional visual system.
+                    </p>
 
-        <div class="divider">
-            <span>OR</span>
-        </div>
+                    <div class="metric-stack">
+                        <article class="metric-card">
+                            <span class="metric-value">12</span>
+                            <span class="metric-label">active projects in motion</span>
+                        </article>
+                        <article class="metric-card">
+                            <span class="metric-value">45</span>
+                            <span class="metric-label">tasks completed this cycle</span>
+                        </article>
+                        <article class="metric-card">
+                            <span class="metric-value">8</span>
+                            <span class="metric-label">specialists collaborating</span>
+                        </article>
+                    </div>
+                </aside>
+            </section>
 
-        <div class="social-login">
-            <button type="button" class="social-btn" onclick="alert('GitHub login integration')">
-                GitHub
-            </button>
-            <button type="button" class="social-btn" onclick="alert('Google login integration')">
-                Google
-            </button>
-        </div>
+            <section class="section-block" id="features">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Why it works</p>
+                        <h2>Structured like a real product page, not a quick demo.</h2>
+                    </div>
+                    <p>
+                        The experience is split into clear sections with intentional content, stronger visuals,
+                        and a more believable product story for GitHub Pages visitors.
+                    </p>
+                </div>
 
-        <div class="signup-link">
-            Don't have an account? <a href="#">Sign up here</a>
-        </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-badge">01</span>
+                        <h3>Focused hero section</h3>
+                        <p>A clear message, strong calls to action, and visual hierarchy that guides the eye.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-badge">02</span>
+                        <h3>Actual page structure</h3>
+                        <p>Navigation, feature sections, preview content, and footer all work together cleanly.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-badge">03</span>
+                        <h3>Consistent styling</h3>
+                        <p>Shared CSS variables, layered backgrounds, and responsive spacing replace inline clutter.</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-badge">04</span>
+                        <h3>Better deployment fit</h3>
+                        <p>Static root pages are now the same quality level as the Flask templates in the app.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Northstar Flow. Designed for modern client delivery.</p>
+        </footer>
     </div>
-
-    <script>
-        const form = document.getElementById('loginForm');
-        const errorMessage = document.getElementById('errorMessage');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Basic validation
-            if (!email || !password) {
-                showError('Please fill in all fields');
-                return;
-            }
-
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                showError('Please enter a valid email address');
-                return;
-            }
-
-            if (password.length < 6) {
-                showError('Password must be at least 6 characters');
-                return;
-            }
-
-            // Success message
-            errorMessage.textContent = '✓ Login successful! Redirecting...';
-            errorMessage.style.background = '#efe';
-            errorMessage.style.color = '#3c3';
-            errorMessage.style.borderColor = '#cfc';
-            errorMessage.classList.add('show');
-
-            // Simulate redirect after 2 seconds
-            setTimeout(() => {
-                alert('Login successful! In a real app, you would be redirected to the dashboard.');
-                form.reset();
-                errorMessage.classList.remove('show');
-                errorMessage.style.background = '#fee';
-                errorMessage.style.color = '#c33';
-                errorMessage.style.borderColor = '#fcc';
-            }, 2000);
-        });
-
-        function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.classList.add('show');
-            setTimeout(() => {
-                errorMessage.classList.remove('show');
-            }, 4000);
-        }
-    </script>
 </body>
 </html>
